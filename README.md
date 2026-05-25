@@ -53,9 +53,9 @@ Covers **Layer 3 (Network)**, **Layer 4 (Transport)**, and **Layer 7 (Applicatio
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/Hacker00X1/ddos-attack.git
 cd ddos-attack
+```
 
 # Install Python dependencies
 pip install scapy
@@ -224,6 +224,3 @@ The author assumes no liability for any misuse or damages caused by this tool.
 Users are responsible for complying with all applicable local, state, and international laws.
 You are authorized. You have permission. You know what you're doing.
 Use it responsibly.
-
-Made with ⚡ by Hacker00X1
-```
