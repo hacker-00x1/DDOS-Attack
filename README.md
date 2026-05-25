@@ -237,10 +237,14 @@ The live dashboard provides real-time visibility into the attack:
 ```
 
 # Author
+```bash
 Hacker00X1
+```
 
+```bash
 Authorized penetration testing professional.
 This tool is developed for legitimate security assessments under explicit authorization.
+```
 
 # Disclaimer
 This tool is provided for educational purposes and authorized security testing only. 
