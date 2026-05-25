@@ -99,15 +99,19 @@ Flag	Default	Description
 ```bash
 -a, --attack	http_flood	Attack type — see Attack Modules
 ```
+
 ```bash
 -d, --duration	30	Duration of the attack in seconds
 ```
+
 ```bash
 -t, --threads	100	Number of concurrent worker threads
 ```
+
 ```bash
 --port	80	Target port (required for IP targets)
 ```
+
 ```bash
 --list	—	Display all available attack modules
 ```
