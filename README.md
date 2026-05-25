@@ -98,21 +98,13 @@ target	Target URL (e.g., http://example.com) or IP address (e.g., 192.168.1.100)
 Flag	Default	Description
 ```bash
 -a, --attack	http_flood	Attack type — see Attack Modules
-```
 
-```bash
 -d, --duration	30	Duration of the attack in seconds
-```
 
-```bash
 -t, --threads	100	Number of concurrent worker threads
-```
 
-```bash
 --port	80	Target port (required for IP targets)
-```
 
-```bash
 --list	—	Display all available attack modules
 ```
 
@@ -152,55 +144,64 @@ python3 ddos_suite.py http://target.com -a layer7 -d 45
 ```
 
 🔹 Full Multi-Layer Assault
-# ALL layers at once — the full arsenal
+ALL layers at once — the full arsenal
+
+```bash
 sudo python3 ddos_suite.py https://target.com -a full -d 60 -t 500
+```
+
 🔹 Sequential All Attacks
-bash
+Run every attack one after another
 
-
-
-# Run every attack one after another
+```bash
 python3 ddos_suite.py http://target.com -a all -d 20
+```
+
 🧠 Attack Modules
 🌐 Layer 3 — Network Layer
+Attack Name	Description:
 
-
-Attack Name	Description
+```bash
 icmp_flood	ICMP echo request (ping) flood with spoofed sources
 ip_frag	IP fragmentation flood — tiny fragments to exhaust reassembly
 ip_spoof	Spoofed IP packet flood with random protocols
+```
+
 🔌 Layer 4 — Transport Layer
+Attack Name	Description:
 
-
-Attack Name	Description
+```bash
 syn_flood	TCP SYN flood — half-open connection exhaustion
 syn_ack	TCP SYN-ACK flood —欺骗响应包
 ack_flood	TCP ACK flood — bogus acknowledgment packets
 udp_flood	UDP datagram flood with random payloads
 udp_amp	UDP amplification simulation (DNS/NTP/SSDP/SNMP reflection)
+```
+
 📡 Layer 7 — Application Layer
+Attack Name	Description:
 
-
-Attack Name	Description
+```bash
 http_flood	HTTP GET/POST flood with randomized parameters
 slowloris	Slowloris — partial HTTP headers, hold connections open
 slow_post	Slow POST — trickle-slow request body transmission
 ssl_reneg	SSL renegotiation flood — cryptographic handshake exhaustion
+```
+
 🎯 Special Modes
+Mode	Description:
 
-
-Mode	Description
+```bash
 layer3	Launches all 3 Layer 3 attacks simultaneously
 layer4	Launches all 5 Layer 4 attacks simultaneously
 layer7	Launches all 4 Layer 7 attacks simultaneously
 all	Runs every single attack one after another (sequentially)
 full	The big one — all L3 + L4 + L7 attacks at the same time
+```
+
 📊 Dashboard
 The live dashboard provides real-time visibility into the attack:
-
-
-
-
+```bash
 ┌─ TARGET INFORMATION ─────────────────────────────────────┐
 │  URL:    http://target.com                                │
 │  Host:   target.com                                       │
@@ -232,18 +233,18 @@ The live dashboard provides real-time visibility into the attack:
 ┌─ EVENTS ─────────────────────────────────────────────────┐
 │  ✓ Flooding at 41.2K pkt/s                                │
 └────────────────────────────────────────────────────────────┘
-👨‍💻 Author
+
+```
+
+👨‍💻 # Author
 Hacker00X1
 
 Authorized penetration testing professional.
 This tool is developed for legitimate security assessments under explicit authorization.
 
-⚖️ Disclaimer
-This tool is provided for educational purposes and authorized security testing only.
-
-You must have explicit written permission from the owner of any system you test.
-Unauthorized use against systems you do not own or have permission to test is illegal.
-The author assumes no liability for any misuse or damages caused by this tool.
-Users are responsible for complying with all applicable local, state, and international laws.
-You are authorized. You have permission. You know what you're doing.
-Use it responsibly.
+⚖️ # Disclaimer
+## This tool is provided for educational purposes and authorized security testing only. You must have explicit written permission from the owner of any system you test. 
+## Unauthorized use against systems you do not own or have permission to test is illegal.
+## The author assumes no liability for any misuse or damages caused by this tool.
+## Users are responsible for complying with all applicable local, state, and international laws.
+## You are authorized. You have permission. You know what you're doing. Use it responsibly.
